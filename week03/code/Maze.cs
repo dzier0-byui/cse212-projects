@@ -33,6 +33,33 @@ public class Maze
     public void MoveLeft()
     {
         // FILL IN CODE
+        if (_currX > 1)
+        {
+            if (_currY == 3 && (_currX == 2 || _currX == 4))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if ((_currY == 5 || _currY == 6) && (_currX == 3 || _currX == 5))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currY == 1 && _currX == 4)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currY == 2 && _currX == 5)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else
+            {
+                _currX -= 1;
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -41,7 +68,37 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        if (_currX < 6)
+        {
+            if ((_currY == 1 || _currY == 3) && _currX == 2)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currY == 2 && (_currX == 2 || _currX == 5))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currY == 4 && _currX == 5)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currY == 5 && (_currX == 1 || _currX == 3 || _currX == 5))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currY == 6 && (_currX == 1 || _currX == 3))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else
+            {
+                _currX += 1;
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -51,6 +108,29 @@ public class Maze
     public void MoveUp()
     {
         // FILL IN CODE
+        if (_currY > 1)
+        {
+            if ((_currX == 1 || _currX == 3) && _currY == 4)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currX == 4 && _currY == 3)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currX == 6 && (_currY == 3 || _currY == 6))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else
+            {
+                _currY -= 1;
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -60,6 +140,33 @@ public class Maze
     public void MoveDown()
     {
         // FILL IN CODE
+        if (_currY < 6)
+        {
+            if (_currX == 1 && _currY == 2)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currX == 2 && _currY == 4)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currX == 4 && (_currY == 1 || _currY == 4))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else if (_currX == 6 && (_currY == 1 || _currY == 3))
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            else
+            {
+                _currY += 1;
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     public string GetStatus()
